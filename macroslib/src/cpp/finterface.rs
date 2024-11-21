@@ -188,6 +188,7 @@ pub struct {struct_with_funcs} {{
 /// It totally depends on С++ implementation
 /// let's assume it safe
 unsafe impl Send for {struct_with_funcs} {{}}
+unsafe impl Sync for {struct_with_funcs} {{}}
 impl {trait_name} for {struct_with_funcs} {{"#,
         trait_name = DisplayToTokens(&interface.self_type.bounds[0]),
         struct_with_funcs = struct_with_funcs,

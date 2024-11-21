@@ -184,6 +184,7 @@ struct JavaCallback {
 /// According to JNI spec it should be safe to
 /// pass pointer to JavaVm and jobject (global) across threads
 unsafe impl Send for JavaCallback {}
+unsafe impl Sync for JavaCallback {}
 
 #[allow(dead_code)]
 struct JniEnvHolder<'a> {
