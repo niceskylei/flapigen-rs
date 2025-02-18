@@ -10,7 +10,11 @@ struct Session {
 impl Session {
     pub fn new() -> Session {
         #[cfg(target_os = "android")]
-        android_logger::init_once(android_logger::Config::default().with_tag("Hello"));
+        android_logger::init_once(
+            android_logger::Config::default()
+                .with_max_level(log::LevelFilter::Debug)
+                .with_tag("Hello"),
+        );
         log_panics::init(); // log panics rather than printing them
         info!("init log system - done");
         Session { a: 2 }
