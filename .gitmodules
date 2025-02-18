@@ -1,3 +1,3 @@
 [submodule "cpp_tests/c++/gtest"]
 	path = cpp_tests/c++/gtest
-	url = https://github.com/google/googletest.git
+	url = git@gitlab.skysri.com:coolink-group/cc-socket/googletest.git

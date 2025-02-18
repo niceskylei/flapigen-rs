@@ -67,7 +67,7 @@ archTriplets.each { arch, target ->
     // Build with cargo
     tasks.create(name: "cargo-build-${arch}", type: Exec, description: "Building core for ${arch}", dependsOn: "cargo-output-dir-${arch}") {
         workingDir rustBasePath
-        commandLine 'cargo', 'build', "--target=${target}", '--release'
+        commandLine 'cargo', 'ndk', '--platform=21', '-t', "${arch}", 'build', '--release'
     }
     // Sync shared native dependencies
     tasks.create(name: "sync-rust-deps-${arch}", type: Sync, dependsOn: "cargo-build-${arch}") {

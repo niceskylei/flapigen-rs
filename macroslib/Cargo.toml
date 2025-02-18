@@ -9,9 +9,15 @@ repository = "https://github.com/Dushistov/flapigen-rs"
 documentation = "https://docs.rs/flapigen"
 readme = "../README.md"
 edition = "2018"
+crate_type = ["cdylib"]
 
 [dependencies]
-syn = { version = "1.0.12", features = ["full", "extra-traits", "visit-mut", "visit"] }
+syn = { version = "1.0.12", features = [
+    "full",
+    "extra-traits",
+    "visit-mut",
+    "visit",
+] }
 quote = "1.0"
 proc-macro2 = { version = "1.0", features = ["span-locations"] }
 log = "0.4.6"
@@ -33,5 +39,10 @@ jni-sys = "0.3.0"
 
 [build-dependencies]
 rustc-hash = "1.0.1"
-syn = { version = "1.0", features = ["full", "extra-traits", "visit-mut", "visit"] }
+syn = { version = "1.0", features = [
+    "full",
+    "extra-traits",
+    "visit-mut",
+    "visit",
+] }
 quote = "1.0"
